@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>产品经理-关联文件夹</title>
+		<style type="text/css">
+			.form-horizontal { margin:20px 0 0 20px;}
+			.form-horizontal .control-label {width:120px;}
+			.form-horizontal .controls {margin-left: 140px;}
+			.form-horizontal .control-group {margin-bottom: 12px;}
+			.modal-body {height:300px;overflow:auto;padding:0;}
+			.bootbox {width:640px;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产品经理</a><span class="divider">/</span></li>
+				<li><a href="mywork/productMaanger/waittododemand.html" data-content="content">待处理的需求</a><span class="divider">/</span></li>
+				<li>关联文件夹</li>
+			</ul>
+			<div class="toolbar">
+				<div class="pull-right">
+					<button type="button" class="btn btn-success">保存</button>
+		    		<button type="button" class="btn" style="margin-left: 10px;">重置</button>
+				</div>
+			</div>
+		</header>
+		<div class="content-body">
+			<div class="row-fluid">
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label">选择文件夹</label>
+						<div class="controls">
+							<input type="text" class="input-xlarge span8" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">故事</label>
+						<div style="max-height: 320px;overflow: auto;" class="controls">
+								<table class="table table-bordered table-condensed span8" id="addformstorytable">
+									<thead>
+										<tr>
+											<th colspan="5">
+												<div class="btn-group pull-right">
+													<button data-handler="addstory" class="btn btn-mini" type="button">添加</button>
+													<button data-handler="delstory" class="btn btn-mini" type="button">删除</button>
+												</div>
+											</th>
+										</tr>
+										<tr>
+											<th width="20"><input type="checkbox" data-table="#addformstorytable" data-checkbox="cascade"></th>
+											<th class="span3">编号</th>
+											<th class="span9">标题</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="checkbox"></td>
+											<td>S-001</td>
+											<td>内容优化</td>
+										</tr>
+										<tr>
+											<td><input type="checkbox"></td>
+											<td>S-002</td>
+											<td>小文件存储</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/mywork/productManager/associatedfolder.js"></script>
+	</body>
+</html>

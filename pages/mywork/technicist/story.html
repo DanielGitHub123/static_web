@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>技术接口人-待处理的故事</title>
+		<style type="text/css">
+			.toolbar {border-bottom:none;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">技术接口人</a><span class="divider">/</span></li>
+				<li>待处理的故事</li>
+			</ul>
+			<div class="toolbar">
+				<div class="btn-group pull-right">
+					<button class="btn" href="mywork/technicist/addstory.html" data-content="content"><i class=" icon-plus"></i> 新建</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="mywork/technicist/editstory.html" data-content="content"><i class="icon-pencil"></i> 编辑</a></li>
+						<li><a tabindex="-1" href="mywork/technicist/distributestory.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+						<li><a tabindex="-1" href="#"><i class="icon-reply"></i> 退回</a></li>
+						<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+						<li><a tabindex="-1" href="mywork/technicist/viewstory.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+						<li><a tabindex="-1" href="mywork/technicist/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+					</ul>
+				</div>
+				<form class="form-inline clearmargin">
+                    <label>标题:</label>
+                    <input type="text" class="input-small"/>
+                    <label>项目组:</label>
+                    <input type="text" class="input-small" />
+                    <div class="btn-group">
+                    	<button class="btn" type="button" data-handler="search">查询</button>
+                    	<button class="btn" type="button" data-toggle="collapse" data-target=".extraSearchbar"><i class="icon-sort"></i></button>
+                    </div>
+                    
+                    <div class="extraSearchbar collapse">
+						<label>类型:</label>
+	                    <select style="width:103px;">
+	                    	<option >全部</option>
+						  	<option >技术改造</option>
+						  	<option >开发</option>
+						  	<option >测试</option>
+						</select>
+	                    <label>优先级:</label>
+	                    <select style="width:103px;">
+	                    	<option >全部</option>
+	                    	<option >1</option>
+						  	<option >2</option>
+						  	<option >3</option>
+						  	<option >4</option>
+						  	<option >5</option>
+						  	<option >6</option>
+						  	<option >7</option>
+						  	<option >8</option>
+						  	<option >9</option>
+						</select>
+	                    <label>状态:</label>
+	                    <select style="width:103px;">
+				            <option value=""> 全部 </option>
+				            <option> 开发中 </option>
+			            	<option> 已下发 </option>
+	            		</select>
+	                    <label>产品经理:</label>
+	                    <input type="text" class="input-small" />
+					</div>
+                </form>
+			</div>
+			<div class="table-header">
+				<table class="table table-condensed table-bordered" style="border-bottom: none;">
+					<thead>
+						<tr>
+							<th colspan="9" style="text-align: center;"> 基本信息 </th>
+							<th colspan="3" style="text-align: center;"> 工作量 </th>
+							<th colspan="3" style="text-align: center;"> 人员 </th>
+						</tr>
+						<tr>
+							<th width="30"> 编号 </th>
+							<th width="130"> 标题 </th>
+							<th> 类型 </th>
+							<th> 项目组 </th>
+							<th> 优先级 </th>
+							<th> 状态 </th>
+							<th> 产品经理 </th>
+							<th> 创建时间 </th>
+							<th> 文件夹(PRD) </th>
+							
+							<th> 估量 </th>
+							<th> 实际 </th>
+							<th> 剩余 </th>
+							
+							<th> 创建者 </th>
+							<th> 开发者 </th>
+							<th> 测试者 </th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</header>
+		<div class="content-body">
+			<table class="table table-hover table-condensed tree">
+                <tbody>
+                	<tr class="treegrid-1">
+		            	<td >1</td>
+	                    <td >连载更新</td>
+	                    <td >技术改造</td>
+	                    <td >项目组1</td>
+	                    <td >1</td>
+	                    <td >开发中</td>
+	                    <td >Jack</td>
+	                    <td >2013-05-23 23:14:23</td>
+	                    <td >work</td>
+	                    
+	                    <td >5</td>
+	                    <td >3</td>
+	                    <td >2</td>
+	                    
+	                    <td >张三</td>
+	                    <td >李四</td>
+	                    <td >王五</td>
+		            </tr>
+		                <tr class="treegrid-2 treegrid-parent-1">
+		                    <td >2</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+		                <tr class="treegrid-3 treegrid-parent-1">
+		                    <td >3</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+		                <tr class="treegrid-4 treegrid-parent-3">
+		                    <td >4</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+		                <tr class="treegrid-5">
+		                    <td >5</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+		                <tr class="treegrid-6 treegrid-parent-5">
+		                    <td >6</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+		                <tr class="treegrid-7 treegrid-parent-5">
+		                    <td >7</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+		                <tr class="treegrid-8 treegrid-parent-7">
+		                    <td >8</td>
+		                    <td >内容同步</td>
+		                    <td >开发</td>
+		                    <td >项目组2</td>
+		                    <td >5</td>
+		                    <td >已下发</td>
+		                    <td >Rose</td>
+		                    <td >2013-05-23 23:14:23</td>
+		                    <td >work</td>
+		                    
+		                    <td >5</td>
+		                    <td >3</td>
+		                    <td >2</td>
+		                    
+		                    <td >张三</td>
+		                    <td >李四</td>
+		                    <td >王五</td>
+		                </tr>
+                    </tbody>
+                </table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+				<div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>	
+				<div class="pagination pull-right">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+						<li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//初始化选择框插件
+				$("select").select2({
+					enableSearch : false
+				});
+					
+				//初始化树形结构数据表
+				$('.tree').treegrid({
+			        treeColumn: 1,
+			        initialState : 'collapsed',
+			        expanderExpandedClass: 'icon-caret-down',
+			        expanderCollapsedClass: 'icon-caret-right'
+			    });
+			});
+		</script>
+	</body>
+</html>

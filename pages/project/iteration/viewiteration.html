@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8;" />
+		<title>查看迭代</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="project/projectmain.html" data-content="content" data-target="#innerContent">项目管理</a><span class="divider">/</span></li>
+				<li><a href="" data-content="content" data-target="#innerContent">迭代管理</a><span class="divider">/</span></li>
+				<li><a href="project/iteration/iterationplan.html" data-content="content" data-target="#innerContent">迭代计划</a><span class="divider">/</span></li>
+				<li>查看迭代计划</li>
+			</ul>
+			<div class="toolbar">
+                <form class="form-inline clearmargin">
+                    <label>名称</label>
+                    <input type="text" class="input-small"/>
+					<label>状态:</label>
+	                <select style="width:104px;">
+				    	<option value=""> 全部 </option>
+				        <option> 待分析 </option>
+			           	<option> 待评审 </option>
+			            <option> 待实现 </option>
+			            <option> 待部署 </option>
+			            <option> 待验收 </option>
+			            <option> 待验收 </option>
+			            <option> 待确认 </option>
+			            <option> 已完成 </option>
+			            <option> 关闭 </option>
+	            	</select>                    
+	            	<div class="btn-group">
+                    	<button class="btn" type="button" data-handler="search">查询</button>
+                    	<button class="btn" type="button" data-toggle="collapse" data-target=".extraSearchbar"><i class="icon-sort"></i></button>
+                    </div>
+                    
+                    <div class="extraSearchbar collapse">
+	                    <label>开始时间:</label>
+	                    <div class="input-append" id="datetimepicker1">
+						    <input type="text" class="input-xlarge disabled" data-format="yyyy-MM-dd HH:mm:ss" style="width: 135px;">
+						    <span class="add-on">
+						      <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></i>
+						    </span>
+				  		</div>
+	                    <label>结束时间:</label>
+	                    <div class="input-append" id="datetimepicker2" >
+						    <input type="text" class="input-xlarge disabled" data-format="yyyy-MM-dd HH:mm:ss" style="width: 135px;">
+						    <span class="add-on">
+						      <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></i>
+						    </span>
+				  		</div>
+					</div>
+                </form>
+			</div>
+			<div class="table-header">
+				<table class="table table-condensed">
+					<thead>
+	                    <tr>
+	                        <th width="120">编号</th>
+	                        <th width="120">名称</th>
+	                        <th width="100">状态</th>
+	                        <th width="150">开始时间</th>
+	                        <th width="150">结束时间</th>
+	                        <th width="80">总工作量</th>
+	                        <th width="80">完成工作量</th>
+	                        <th width="80">总故事数</th>
+	                        <th width="80">完成故事数</th>
+	                        <th width="60" style="text-align:center;"> 操作 </th>
+	                    </tr>
+	             	</thead>
+				</table>
+			</div>
+		</header>
+		<div class="content-body">
+			<table class="table table-hover table-condensed">
+                <tbody>
+                	<tr>
+		            	<td width="120">Sprint2013090801</td>
+		            	<td width="120">十月份迭代</td>
+	                    <td width="100">开发中</td>
+	                    <td width="150">2013-08-23 18:45:25</td>
+	                    <td width="150"> 2013-08-23 18:45:25 </td>
+	                    <td width="80">20</td>
+	                    <td width="80">5</td>
+	                    <td width="80">2</td>
+	                    <td width="80">1</td>
+	                    <td width="60"><button type="button" class="btn btn-small" href="project/iteration/detailIteration.html" data-content="content">详情</button></td>
+		            </tr>
+	                <tr>
+		            	<td width="120">Sprint2013090801</td>
+		            	<td width="120">十月份迭代</td>
+	                    <td width="100">开发中</td>
+	                    <td width="150">2013-08-23 18:45:25</td>
+	                    <td width="150"> 2013-08-23 18:45:25 </td>
+	                    <td width="80">20</td>
+	                    <td width="80">5</td>
+	                    <td width="80">2</td>
+	                    <td width="80">1</td>
+	                    <td width="60"><button type="button" class="btn btn-small" href="project/iteration/detailIteration.html" data-content="content">详情</button></td>
+		            </tr>
+		            <tr>
+		            	<td width="120">Sprint2013090801</td>
+		            	<td width="120">十月份迭代</td>
+	                    <td width="100">开发中</td>
+	                    <td width="150">2013-08-23 18:45:25</td>
+	                    <td width="150"> 2013-08-23 18:45:25 </td>
+	                    <td width="80">20</td>
+	                    <td width="80">5</td>
+	                    <td width="80">2</td>
+	                    <td width="80">1</td>
+	                    <td width="60"><button type="button" class="btn btn-small" href="project/iteration/detailIteration.html" data-content="content">详情</button></td>
+		            </tr>
+		            <tr>
+		            	<td width="120">Sprint2013090801</td>
+		            	<td width="120">十月份迭代</td>
+	                    <td width="100">开发中</td>
+	                    <td width="150">2013-08-23 18:45:25</td>
+	                    <td width="150"> 2013-08-23 18:45:25 </td>
+	                    <td width="80">20</td>
+	                    <td width="80">5</td>
+	                    <td width="80">2</td>
+	                    <td width="80">1</td>
+	                    <td width="60"><button type="button" class="btn btn-small" href="project/iteration/detailIteration.html" data-content="content">详情</button></td>
+		            </tr>
+		            <tr>
+		            	<td width="120">Sprint2013090801</td>
+		            	<td width="120">十月份迭代</td>
+	                    <td width="100">开发中</td>
+	                    <td width="150">2013-08-23 18:45:25</td>
+	                    <td width="150"> 2013-08-23 18:45:25 </td>
+	                    <td width="80">20</td>
+	                    <td width="80">5</td>
+	                    <td width="80">2</td>
+	                    <td width="80">1</td>
+	                    <td width="60"><button type="button" class="btn btn-small" href="project/iteration/detailIteration.html" data-content="content">详情</button></td>
+		            </tr>
+		            <tr>
+		            	<td width="120">Sprint2013090801</td>
+		            	<td width="120">十月份迭代</td>
+	                    <td width="100">开发中</td>
+	                    <td width="150">2013-08-23 18:45:25</td>
+	                    <td width="150"> 2013-08-23 18:45:25 </td>
+	                    <td width="80">20</td>
+	                    <td width="80">5</td>
+	                    <td width="80">2</td>
+	                    <td width="80">1</td>
+	                    <td width="60"><button type="button" class="btn btn-small" href="project/iteration/detailIteration.html" data-content="content">详情</button></td>
+		            </tr>
+            	</tbody>
+        	</table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+		            <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+		            <div class="pagination pull-right">
+		                <ul>
+		                    <li><a href="#">首页</a></li>
+		                    <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+		                    <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+		                    <li><a href="#">下一页</a></li>
+		                    <li><a href="#">尾页</a></li>
+		                </ul>
+		            </div>
+		        </div>
+		</footer>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/product/iteration/iterationplan-view.js"></script>
+	</body>
+</html>

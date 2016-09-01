@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>日志管理</title>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="menu/account.html" data-content="content" data-target="#innerContent">帐户管理</a><span class="divider">/</span></li>
+				<li>日志管理</li>
+			</ul>
+			<div class="toolbar">
+                <form class="form-inline clearmargin">
+                    <label>编号:</label>
+                    <input type="text" class="input-small"/>
+                    <label>操&nbsp;&nbsp;作&nbsp;&nbsp;人:</label>
+                    <input type="text" class="input-small" />
+                    <div class="btn-group">
+                    	<button class="btn" type="button" data-handler="search">查询</button>
+                    	<button class="btn" type="button" data-toggle="collapse" data-target=".extraSearchbar"><i class="icon-sort"></i></button>
+                    </div>
+                    
+                    <div class="extraSearchbar collapse">
+                    	<label>实体:</label>
+                    	<input type="text" class="input-small" />
+						<label>操作类型:</label>
+	                    <select style="width:104px;margin-left:1px;">
+				            <option value=""> 全部 </option>
+				            <option> 待分析 </option>
+			            	<option> 待评审 </option>
+			            	<option> 待实现 </option>
+			            	<option> 待部署 </option>
+			            	<option> 待验收 </option>
+			            	<option> 待验收 </option>
+			            	<option> 待确认 </option>
+			            	<option> 已完成 </option>
+			            	<option> 关闭 </option>
+	            		</select>
+	                    
+	                    <label>起始时间:</label>
+	                    <div class="input-append" id="datetimepicker1">
+						    <input type="text" class="input-xlarge disabled" data-format="yyyy-MM-dd HH:mm:ss" style="width: 135px;">
+						    <span class="add-on">
+						      <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></i>
+						    </span>
+				  		</div>
+	                    <label>结束时间:</label>
+	                    <div class="input-append" id="datetimepicker2" >
+						    <input type="text" class="input-xlarge disabled" data-format="yyyy-MM-dd HH:mm:ss" style="width: 135px;">
+						    <span class="add-on">
+						      <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></i>
+						    </span>
+				  		</div>
+					</div>
+                </form>
+			</div>
+			<div class="table-header">
+				<table class="table table-condensed">
+					<thead>
+	                    <tr>
+	                        <th width="80"> 编号 </th>
+	                        <th width="110"> 操作类型 </th>
+	                        <th width="110"> 操作人 </th>
+	                        <th width="150"> 操作时间 </th>
+	                        <th width="80"> 实体 </th>
+	                        <th> 描述 </th>
+	                    </tr>
+	             	</thead>
+				</table>
+			</div>
+		</header>
+		<div class="content-body">
+			<table class="table table-hover table-condensed">
+                <tbody>
+                	<tr>
+		            	<td width="80">1</td>
+	                    <td width="110">连载更新1</td>
+	                    <td width="110"> 张三1 </td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80">实体1 </td>
+	                    <td> 描述1 </td>
+		            </tr>
+	                <tr>
+	                    <td width="80">2</td>
+	                    <td width="110">连载更新2</td>
+	                    <td width="110">张三2</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述2 </td>
+	                </tr>
+	                <tr>
+	                    <td width="80">3</td>
+	                    <td width="110">连载更新3</td>
+	                    <td width="110">张三3</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述3 </td>
+	                </tr>
+	                <tr>
+	                    <td width="80">4</td>
+	                    <td width="110">连载更新4</td>
+	                    <td width="110">张三4</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述4 </td>
+	                </tr>
+	                <tr>
+	                    <td width="80">5</td>
+	                    <td width="110">连载更新5</td>
+	                    <td width="110">张三5</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述5 </td>
+	                </tr>
+	                <tr>
+	                    <td width="80">6</td>
+	                    <td width="110">连载更新6</td>
+	                    <td width="110">张三6</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述6 </td>
+	                </tr>
+	                <tr>
+	                    <td width="80">7</td>
+	                    <td width="110">连载更新7</td>
+	                    <td width="110">张三7</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述7 </td>
+	                </tr>
+	                <tr>
+	                    <td width="80">8</td>
+	                    <td width="110">连载更新8</td>
+	                    <td width="110">张三8</td>
+	                    <td width="150"> 2013-08-23 18:45:30 </td>
+	                    <td width="80"> </td>
+	                    <td> 描述8 </td>
+	                </tr>
+                    </tbody>
+                </table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+		            <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+		            <div class="pagination pull-right">
+		                <ul>
+		                    <li><a href="#">首页</a></li>
+		                    <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+		                    <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+		                    <li><a href="#">下一页</a></li>
+		                    <li><a href="#">尾页</a></li>
+		                </ul>
+		            </div>
+		        </div>
+		</footer>
+		
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/account/log-list.js"></script>
+	</body>
+</html>

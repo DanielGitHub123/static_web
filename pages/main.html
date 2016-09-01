@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>同人项目管理系统</title>
+		<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.css" />
+		<link rel="stylesheet" href="../js/plugins/bootstrap/fortawesome/css/font-awesome.css">
+		<link rel="stylesheet" href="../js/plugins/bootstrap/switch/bootstrap-switch.css" />
+		<link rel="stylesheet" href="../js/plugins/bootstrap/select/select2.css">
+		<link rel="stylesheet" href="../js/plugins/bootstrap/fileupload/fileupload.css">
+		<link rel="stylesheet" href="../js/plugins/bootstrap/datetimepicker/datetimepicker.min.css">
+		<link rel="stylesheet" href="../js/plugins/bootstrap/messenger/messenger.css" />
+		<link rel="stylesheet" href="../js/plugins/bootstrap/messenger/messenger-theme-future.css" />
+		<link rel="stylesheet" href="../js/plugins/bootstrap/xeditable/bootstrap-editable.css">
+		
+		<link rel="stylesheet" href="../css/main.css" />
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="header" class="navbar navbar-inverse navbar-fixed-top">
+				<div class="navbar-inner">
+					<a class="brand" href="#"><img src="../images/logo.png" /><label>同人项目管理系统</label></a>
+					<ul class="nav pull-right">
+						<li class="active" href="mywork/myworkmain.html" data-content="content"><a href="menu/work.html" data-content="content" data-target="#innerSidebar">我的工作</a></li>						
+						<li href="demand/demandmain.html" data-content="content"><a href="menu/demand.html" data-content="content" data-target="#innerSidebar">需求管理</a></li>						
+						<li href="product/productmain.html" data-content="content"><a href="menu/product.html" data-content="content" data-target="#innerSidebar">产品管理</a></li>						
+						<li href="project/projectmain.html" data-content="content"><a href="menu/project.html" data-content="content" data-target="#innerSidebar">项目管理</a></li>						
+						<li href="account/accountmain.html" data-content="content"><a href="menu/account.html" data-content="content" data-target="#innerSidebar">帐户管理</a></li>
+						<li href="#" ><a data-toggle="dropdown" class="dropdown-toggle icon-user icon-3x" href="#"></a>
+							<span class="badge badge-important user-message">6</span>
+							<ul class="dropdown-menu" style="margin-right:8px">
+								<li><a href="account/editpassword.html" data-content="content">修改密码</a></li>
+								<li><a href="account/viewaccount.html" data-content="content">帐号信息</a></li>
+								<li><a href="#">退出登陆</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="main">
+				<div id="sidebar" class="collapse nav-collapse">
+					<div id="innerSidebar"></div>
+				</div>
+				<div id="content">
+					<div class="load-mask"><i class="icon-spinner icon-spin icon-4x"></i></div>
+					<div class="load-error"><i class=""></i></div>
+					<div id="innerContent"></div>
+				</div>
+			</div>
+			<div id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+				<div class="navbar-inner">
+					<span class="sidebar-control pull-left"><a href="#" data-toggle="tooltip" title="改变侧边栏宽度"><i class="icon-arrow-left"></i></a></span>
+					<span>&copy; 版权所有</span>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 引入相关的插件及库文件 -->
+		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../js/highcharts/highcharts.js"></script>
+		
+		<!-- 引入插件 -->
+		<script type="text/javascript" src="../js/plugins/bootstrap/switch/bootstrap-switch.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/select/select2.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/fileupload/fileupload.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/datetimepicker/datetimepicker.min.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/maxlength/bootstrap-maxlength.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/xeditable/bootstrap-editable.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/messenger/messenger.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/bootbox/bootbox.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/multiselect/bootstrap-multiselect.js"></script>
+		<script type="text/javascript" src="../js/plugins/bootstrap/treegrid/jquery.treegrid.js"></script>
+		<script type="text/javascript" src="../js/plugins/jquery.pin.js"></script>
+		<script type="text/javascript" src="../js/plugins/jquery/validator/jquery.validate.js"></script>
+		
+		
+		<script type="text/javascript" src="../js/plugins/jquery.tongrenplugins.js"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="../js/html5.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../js/pages/main.js"></script>
+	</body>
+</html>

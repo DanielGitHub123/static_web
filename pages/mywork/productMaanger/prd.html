@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>产品经理-PRD管理</title>
+		<style type="text/css">
+			.toolbar {border-bottom:none;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产品经理</a><span class="divider">/</span></li>
+				<li>PRD管理</li>
+			</ul>
+			<div class="toolbar">
+				<div class="btn-group pull-right">
+					<button class="btn" href="mywork/productMaanger/upload.html" data-content="content"><i class=" icon-upload"></i> 上传</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="#"><i class="icon-download"></i> 下载</a></li>
+						<li><a tabindex="-1" href="#"><i class="icon-folder-close"></i> 新建文件夹</a></li>
+					</ul>
+				</div>
+				<form class="form-inline clearmargin">
+                    <label>编号:</label>
+                    <input type="text" class="input-small"/>
+                    <label>标题:</label>
+                    <input type="text" class="input-small" />
+                    <button class="btn" type="button" data-handler="search">查询</button>
+                </form>
+			</div>
+			<div class="table-header">
+				<table class="table table-condensed table-bordered table-noradius" style="border-bottom: none;">
+					<thead>
+						<tr>
+							<th width="80"> 编号 </th>
+							<th > 标题 </th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</header>
+		<div class="content-body">
+			<table class="table table-hover table-condensed tree">
+                <tbody>
+                	<tr class="treegrid-1">
+		            	<td width="80">1</td>
+	                    <td >天翼阅读平台需求规格说明书（分册4：产品管理）</td>
+		            </tr>
+		                <tr class="treegrid-2 treegrid-parent-1">
+		                    <td width="80">2</td>
+		                    <td >（分册4：产品管理）V2.9.docx</td>
+		                </tr>
+		                <tr class="treegrid-3 treegrid-parent-1">
+		                    <td width="80">3</td>
+		                    <td >（分册4：产品管理）V3.0.docx</td>
+		                </tr>
+		                <tr class="treegrid-4 treegrid-parent-1">
+		                    <td width="80">4</td>
+		                    <td >（分册4：产品管理）V3.1.docx</td>
+		                </tr>
+		                <tr class="treegrid-5">
+		                    <td width="80">5</td>
+		                    <td >天翼阅读平台需求规格说明书(阅点管理)</td>
+		                </tr>
+		                <tr class="treegrid-6 treegrid-parent-5">
+		                    <td width="80">6</td>
+		                    <td >(阅点管理)V4.0.0.doc</td>
+		                </tr>
+		                <tr class="treegrid-7 treegrid-parent-5">
+		                    <td width="80">7</td>
+		                    <td >(阅点管理)V4.1.0.docx</td>
+		                </tr>
+		                <tr class="treegrid-8 treegrid-parent-5">
+		                    <td width="80">8</td>
+		                    <td >(阅点管理)V4.1.1.docx</td>
+		                </tr>
+                    </tbody>
+                </table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+				<div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>	
+				<div class="pagination pull-right">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+						<li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+						<li><a href="#">下一页</a></li>
+						<li><a href="#">尾页</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript">
+			$(document).ready(function(){
+					
+				//初始化树形结构数据表
+				$('.tree').treegrid({
+			        treeColumn: 1,
+			        expanderExpandedClass: 'icon-caret-down',
+			        expanderCollapsedClass: 'icon-caret-right'
+			    });
+			});
+		</script>
+	</body>
+</html>

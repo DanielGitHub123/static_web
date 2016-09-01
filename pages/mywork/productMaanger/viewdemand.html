@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>产品经理-查看需求</title>
+		<style type="text/css">
+			.form-horizontal .control-label {
+				width:120px;
+			}
+			
+			.form-horizontal .controls {
+			    margin-left: 140px;
+			}
+			
+			.form-horizontal .control-group {
+			    margin-bottom: 12px;
+			}
+			
+			.radio.inline,.checkbox.inline {
+				display: inline-flex;
+			}
+			
+			.radio.inline > div,.checkbox.inline > div {
+				margin-right: 8px;
+			}
+			
+			.theadtitle {
+				font-size: 22px;
+    			line-height: 30px;
+    			margin-left: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="row-fluid row-bread-height">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产品经理</a><span class="divider">/</span></li>
+				<li><a href="mywork/productMaanger/waittododemand.html" data-content="content">待处理的需求</a><span class="divider">/</span></li>
+				<li>查看/修改需求</li>
+			</ul>
+		</div>
+		
+		<div class="row-fluid">
+			<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th colspan="2">
+							<div class="pull-left theadtitle">查看需求</div>
+							<div class="pull-right" style="line-height: 0;">
+						    	<div class="switch" data-on-label="编辑" data-off-label="查看" data-on="warning" data-off="success">
+								    <input type="checkbox" />				    
+								</div>
+						    </div>
+						</th>
+					</tr>
+				</thead>
+                <tbody> 
+                    <tr>         
+                        <td width="10%"><span style="color:red;">* </span>主题</td>
+                        <td width="40%"><a href="#" data-type="text" data-pk="1" data-original-title="Enter username" class="editable editable-click">superuser</a></td>
+                    </tr>
+                    <tr>         
+                        <td><span style="color:red;">* </span>所属部门</td>
+                        <td><a href="#" data-type="text" data-pk="1" data-placement="right" data-placeholder="Required" data-original-title="Enter your firstname" class="editable editable-click editable-empty">Empty</a></td>
+                    </tr>  
+                    <tr>         
+                        <td>申请人</td>
+                        <td><a href="#" id="sex" data-type="select" data-pk="1" data-value="" data-original-title="Select sex" class="editable editable-click" style="color: gray; ">not selected</a></td>
+                    </tr>
+                    <tr>         
+                        <td>申请时间</td>
+                        <td><a href="#" id="group" data-type="datetime" data-pk="1" data-value="5" data-source="/groups" data-original-title="Select group" class="editable editable-click">Admin</a></td>
+                    </tr> 
+                    <tr>         
+                        <td><span style="color:red;">* </span>商业价值</td>
+                        <td><a href="#" id="status" data-type="datetime" data-pk="1" data-value="0" data-source="/status" data-original-title="Select status" class="editable editable-click">Active</a></td>
+                    </tr> 
+                    
+                    <tr>         
+                        <td>需求状态</td>
+                        <td><a href="#" data-type="datetime" data-pk="1" data-value="0" data-source="/status" data-original-title="Select status" class="editable editable-click">Active</a></td>
+                    </tr>  
+                    <tr>         
+                        <td>关联文件夹</td>
+                        <td><a href="#" data-type="datetime" data-pk="1" data-value="0" data-source="/status" data-original-title="Select status" class="editable editable-click">Active</a></td>
+                    </tr>        
+                                        
+                    <tr>         
+                        <td><span style="color:red;">* </span>涉及</td>
+                        <td><a href="#" data-type="select2" data-pk="1" data-placeholder="Your comments here..." data-original-title="Enter comments" class="editable editable-pre-wrapped editable-click">awesome
+user!</a></td>
+                    </tr> 
+                    
+                    <tr>         
+                        <td>时间紧急性</td>
+                        <td><a href="#" id="state" data-type="typeahead" data-pk="1" data-placement="right" data-original-title="Start typing State.." class="editable editable-click editable-empty">Empty</a></td>
+                    </tr>                       
+                                         
+                                                        
+                    <tr>         
+                        <td>优先级</td>
+                        <td><a href="#" id="fruits" data-type="checklist" data-value="2,3" data-original-title="Select fruits" class="editable editable-click">peach<br>apple</a></td>
+                    </tr>
+
+                    <tr>         
+                        <td>描述</td>
+                        <td><a href="#" data-type="select2" data-pk="1" data-original-title="Enter tags" class="editable editable-click">html, javascript</a></td>
+                    </tr>  
+                    
+                    <tr>         
+                        <td>备注</td>
+                        <td><a href="#" data-type="select2" data-pk="1" data-original-title="Enter tags" class="editable editable-click">html, javascript</a></td>
+                    </tr>                    
+
+                    <tr>         
+                        <td>附件</td>
+                        <td><a href="#" id="country" data-type="select2" data-pk="1" data-value="BS" data-original-title="Select country" class="editable editable-click">Bahamas</a></td>
+                    </tr>  
+                </tbody>
+            </table>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$.fn.editable.defaults.mode = 'inline';
+				
+				$('a[data-type]').editable();
+				
+				$('.switch')['bootstrapSwitch'](); // attach bootstrapswitch
+				
+				
+				$('a[data-type]').editable('disable');
+				$('.switch').on('switch-change', function (e, data) {
+				    var $el = $(data.el), value = data.value;
+				    $('a[data-type]').editable(value?'enable':'disable');
+				    $('.theadtitle').text(value?'编辑需求':'查看需求');
+				});
+			});
+		</script>
+	</body>
+</html>

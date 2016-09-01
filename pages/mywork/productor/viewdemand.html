@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>产品接口人-查看需求</title>
+		<style type="text/css">
+			.toolbar { height: 30px;line-height: 30px;font-size: 20px;padding: 5px 5px 5px 8px;}
+			.select2-search-choice-close {background-image: none !important;}
+			.select2-container-multi .select2-choices .select2-search-choice {padding:3px 5px;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产口接口人</a><span class="divider">/</span></li>
+				<li><a href="mywork/productor/waittododemand.html" data-content="content">待处理的需求</a><span class="divider">/</span></li>
+				<li><div class="header-msg">查看需求</div></li>
+			</ul>
+			<div class="toolbar">
+				<div class="header-msg pull-left">查看需求</div>
+				<div class="pull-right" style="line-height: 0;">
+			    	<div class="switch" data-on-label="编辑" data-off-label="查看" data-on="warning" data-off="success">
+					    <input type="checkbox" />				    
+					</div>
+			    </div>
+			</div>
+		</header>
+		
+		<div class="row-fluid">
+			<table class="table table-bordered table-striped table-well-none">
+                <tbody> 
+                    <tr>         
+                        <th width="120">主题<span class="required">*</span></th>
+                        <td><a href="#" data-type="text" data-pk="1" class="editable editable-click">连载内容同步更新</a></td>
+                    </tr>
+                    <tr>         
+                        <th>所属部门<span class="required">*</span></th>
+                        <td><a id="department" href="#" data-value="1" data-type="select2" data-pk="1" data-placement="right" class="editable editable-click">内容部</a></td>
+                    </tr>  
+                    <tr>         
+                        <th>申请人</th>
+                        <td><a id="request-people" data-value="1" data-pk="1" data-type="select2" href="#" class="editable editable-click">张三</a></td>
+                    </tr>
+                    <tr>         
+                        <th>申请时间</th>
+                        <td><a id="request-date" href="#" data-type="datetime" data-pk="1" data-value="2013-08-09 12:45:20" class="editable editable-click"></a></td>
+                    </tr> 
+                    <tr>         
+                        <th>商业价值<span class="required">*</span></th>
+                        <td><a id="business-value" href="#" data-type="select2" data-pk="1" data-value="2" class="editable editable-click">重要</a></td>
+                    </tr> 
+                    
+                    <tr>         
+                        <th>需求状态</th>
+                        <td><a id="demand-status" href="#" data-type="select2" data-pk="1" data-value="0" class="editable editable-click"></a></td>
+                    </tr>  
+                    <tr>         
+                        <th>关联文件夹</th>
+                        <td><a href="#" data-type="text" data-pk="1" data-value=""  class="editable editable-click">无</a></td>
+                    </tr>        
+                                        
+                    <tr>         
+                        <th>涉及<span class="required">*</span></th>
+                        <td><a id="about-for" href="#" data-type="select2" data-pk="1"  class="editable editable-pre-wrapped editable-click"></a></td>
+                    </tr> 
+                    
+                    <tr>         
+                        <th>时间紧急性</th>
+                        <td><a id="time-urgent" href="#" data-type="select2" data-pk="1" data-value="1"  class="editable editable-click editable-empty">Empty</a></td>
+                    </tr>                       
+                                         
+                                                        
+                    <tr>         
+                        <th>优先级</th>
+                        <td><a href="#" data-type="text" data-value="2,3" data-original-title="Select fruits" class="editable editable-click">peach apple</a></td>
+                    </tr>
+
+                    <tr>         
+                        <th>描述</th>
+                        <td><a href="#" data-type="textarea" data-pk="1" class="editable editable-click">有关说明</a></td>
+                    </tr>  
+                    
+                    <tr>         
+                        <th>备注</th>
+                        <td><a href="#" data-type="textarea" data-pk="1" class="editable editable-click">html, javascript</a></td>
+                    </tr>                    
+
+                    <tr>         
+                        <th>附件</th>
+                        <td>这是附件</td>
+                    </tr>  
+                </tbody>
+            </table>
+		</div>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/mywork/productor/viewdemand.js"></script>
+	</body>
+</html>

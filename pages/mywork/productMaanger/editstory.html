@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>退回故事-编辑</title>
+		<style type="text/css">
+			.form-horizontal { margin:20px 0 0 20px;}
+			.form-horizontal .control-label {width:120px;}
+			.form-horizontal .controls {margin-left: 140px;}
+			.form-horizontal .control-group {margin-bottom: 12px;}
+			.select2-container .select2-input {margin:0 !important;padding:4px 6px !important;}
+			.toolbar { height: 30px;line-height: 30px;font-size: 20px;padding: 5px 5px 5px 0;}
+			.toolbar button { margin-top:-5px; }
+			.fileupload > input:first-child {display: none;position: absolute;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产品接口人</a><span class="divider">/</span></li>
+				<li><a href="mywork/productor/returnstory.html" data-content="content">退回的故事</a><span class="divider">/</span></li>
+				<li>编辑故事</li>
+			</ul>
+			<div class="toolbar">
+				<div class="pull-right">
+					<button type="button" class="btn btn-success">保存</button>
+		    		<button type="button" class="btn" style="margin-left: 10px;">重置</button>
+				</div>
+			</div>
+		</header>
+		<div class="content-body">
+			<div class="row-fluid">
+				<form class="form-horizontal">
+					<div class="span5">
+					<div class="control-group">
+				    	<label class="control-label" for="topic"><span style="color:red;">* </span>故事名称</label>
+					    <div class="controls">
+					    	<input type="text" name="name" maxlength="25" class="input-xlarge span12">
+					    </div>
+				  	</div>
+				  	<div class="control-group">
+		          		<label class="control-label" for="input01">产品经理</label>
+		          		<div class="controls">
+		            		<input type="text" class="input-xlarge span12">
+		          		</div>
+		        	</div>
+		        	<div class="control-group">
+		          		<label class="control-label"><span style="color:red;">* </span>描述</label>
+		          		<div class="controls">
+				            <div class="textarea">
+				            	<textarea name="remark" maxlength="500" class="span12"></textarea>
+				            </div>
+		          		</div>
+		        	</div>
+				</div>
+				<div class="span5">
+					<div class="control-group">
+		          		<label class="control-label" for="input01">类型</label>
+		          		<div class="controls">
+		            		<select class="multiselect">
+							  	<option value="cheese">需求</option>
+							  	<option value="tomatoes">技术改造</option>
+							  	<option value="mozarella">BUG</option>
+							</select>
+		          		</div>
+		        	</div>
+		        	<div class="control-group">
+		        		<label class="control-label">优先级</label>
+		        		<div class="controls">
+		        			<select class="multiselect">
+							  	<option value="1">1</option>
+							  	<option value="2">2</option>
+							  	<option value="3">3</option>
+							  	<option value="4">4</option>
+							  	<option value="5">5</option>
+							  	<option value="6">6</option>
+							  	<option value="7">7</option>
+							  	<option value="8">8</option>
+							  	<option value="9">9</option>
+							</select>
+		        		</div>
+		        	</div>
+		        	<div class="control-group">
+		          		<label class="control-label">备注</label>
+		          		<div class="controls">
+				            <div class="textarea">
+				            	<textarea name="remark" maxlength="500" class="span12"></textarea>
+				            </div>
+		          		</div>
+		        	</div>
+				</div>
+				</form>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+		  		$('.multiselect').multiselect({
+			      	buttonClass: 'btn',
+			      	buttonWidth : '100%',
+			      	buttonContainer: '<div class="btn-group span12" style="margin-left: 0;" />',
+			      	maxHeight: 240
+		    	});
+		  	});
+		</script>
+	</body>
+</html>

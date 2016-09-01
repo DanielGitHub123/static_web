@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>测试面板</title>
+		<style type="text/css">
+			.table-header table {border-top:none;border-left:none;border-right:none;}
+			.table-header table th { text-align:center;min-width:166px;}
+			.table-header {position: absolute;width:100%;}
+			.table-header + table {margin-top:26px;}
+			
+			.content-body table tr td:first-child{border-left:none !important;}
+			.content-body table td { min-width:160px;}
+
+			.test-list {
+				list-style: none;
+				min-height:50px;
+				min-width: 160px;
+				margin: 0;
+				padding: 0;
+			}
+			
+			.story,.test-item,.test-item-yellow,.test-item-green,.test-item-red {
+				background-color: #F5F5F5;
+	    		background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	    		background-repeat: repeat-x;
+	    		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+	    		border-radius:3px;
+				list-style:none;
+				font-weight: bold;
+				margin:0;
+				padding:0 10px;
+				height:100px;
+				border:1px solid rgba(82,168,236,0.8);
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+			}
+			
+			.test-item {
+				font-weight: normal;
+				margin-bottom:5px;
+				cursor:move;
+				height:50px;
+			}
+			
+			.test-item-yellow {
+				border-color: #FAA732;
+				background-image: linear-gradient(to bottom, #FFFFFF, #DBC59E);
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+				-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+			}
+			
+			
+			.test-item-green {
+				border-color: #19B877;
+				background-image: linear-gradient(to bottom, #FFFFFF, #7ABA7B);
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+				-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+			}
+			
+			.test-item-red {
+				border-color: #DD514C;
+				background-image: linear-gradient(to bottom, #FFFFFF, #D59392);
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+			    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+			}
+			
+			
+			
+			.story-title { height: 25px; margin: 5px 5px 0;}
+			.story-footer { clear:both; }
+			.story-footer .message { line-height: 48px;height:48px;}
+			
+			.test-item .title { height: 20px; margin: 2px 0;}
+			.message { text-align:center;}
+			.test-item ul,.result-column ul,.message ul {list-style:none;margin:0}
+			.test-item .dropdown { width:20px;}
+			.test-item .dropdown a { text-decoration: none;outline:none;}
+			.test-item .dropdown-menu { min-width: 80px;}
+			.story-title span { padding: 3px 0; }
+			.story-title .dropdown-toggle {
+				color:black;
+				outline:none;
+				padding:0;
+				text-decoration: none;
+			}
+			
+			.user {
+			    font-size: 36px;
+			    height: 48px;
+			    line-height: 48px;
+			    color: #939DA8;
+			    text-align: center;
+			    width: 48px;
+			}
+			
+			.username {
+				color: #000000;
+			    font-size: 13px;
+			    line-height: 0;
+			    padding-top: 2px;
+			    font-weight:normal;
+			}
+			
+			.story-plandays {
+				float: right;
+    			margin: -25px 10px 0 0;
+			}
+			
+			.placeholder {
+				border-radius:3px;
+				-webkit-border-radius:3px;
+				-moz-border-radius:3px;
+				border: 1px dashed rgba(82,168,236,0.8);
+				margin-bottom:5px;
+				height:50px;
+				text-align:center;
+				font-size: 36px;
+				line-height:50px;
+			}
+			
+			.right { color:#19B877; border-color:#19B877;}
+			.error { color:#DD514C; border-color:#DD514C;}
+			
+			
+			.result-column ul label { width:60px;padding:0 5px;text-align: right;}
+			.result-column .progress { margin: 10px 0;height:18px;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="project/projectmain.html" data-content="content" data-target="#innerContent">项目管理</a><span class="divider">/</span></li>
+				<li><a href="" data-content="content" data-target="#innerContent">迭代管理</a><span class="divider">/</span></li>
+				<li>测试面板</li>
+			</ul>
+			<div class="toolbar">
+                <form class="form-inline clearmargin">
+                    <label>项　目:</label>
+                    <select style="width:104px;">
+                    	<option value="">  </option>
+                    	<option value="1"> 项目一 </option>
+					  	<option value="2"> 项目二 </option>
+					  	<option value="3"> 项目三 </option>
+					</select>
+                    <label>迭代:</label>
+                    <select style="width:103px;">
+                    	<option value="">  </option>
+			            <option value="1"> 迭代一 </option>
+		            	<option value="2"> 迭代二 </option>
+		            	<option value="3"> 迭代三 </option>
+            		</select>
+                    <div class="btn-group">
+                    	<button class="btn" type="button" data-handler="search">查询</button>
+                    	<button class="btn" type="button" data-toggle="collapse" data-target=".extraSearchbar"><i class="icon-sort"></i></button>
+                    </div>
+                    
+                    <div class="extraSearchbar collapse">
+                    	<label>负责人:</label>
+            			<input type="text" class="input-small" />
+					</div>
+                </form>
+			</div>
+		</header>
+		
+		<div class="content-body">
+			<div class="table-header">
+            	<table class="table table-bordered table-well-none table-condensed">
+					<thead>
+	                    <tr>
+	                        <th width="160"> 故事 </th>
+	                        <th width="160"> 待测试 </th>
+	                        <th width="160"> 失败 </th>
+	                        <th width="160"> 通过 </th>
+	                        <th style="min-width:160px;"> 测试总结 </th>
+	                    </tr>
+	             	</thead>
+				</table>
+            </div>
+			<table class="table table-bordered table-well-none">
+             	<tbody>
+					<tr>
+						<td width="160" class="story-column">
+							<ul class="story">
+								<li class="story-title">
+									<span class="pull-left number"> PS-001 </span>
+									<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+										<ul class="dropdown-menu">
+										    <li><a tabindex="-1" href="#" > 菜单一 </a></li>
+										    <li><a tabindex="-1" href="#" > 菜单二 </a></li>
+										    <li><a tabindex="-1" href="#" > 菜单三 </a></li>
+										</ul>
+									</span>
+									
+								</li>
+								<li class="story-footer">
+									<span class="user pull-left"><i class="icon-user"></i><div class="username">李晓明</div></span>
+									<span class="message">
+										<ul>
+											<li> 在线连载同步 </li>
+											<li> 开发中 </li>
+										</ul>
+									</span>
+								</li>
+							</ul>
+							<div class="story-plandays">0.25</div>
+						</td>
+						<td width="160" class="waiting test-list">
+							<div class="test-item test-item-red">
+								<ul>
+									<li class="title">
+										<span class="pull-left">欧阳正风</span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">编写后台</span>
+										<span class="pull-right">3.50</span>
+									</li>
+								</ul>
+							</div>
+							<div class="test-item test-item-red">
+								<ul>
+									<li class="title">
+										<span class="pull-left">欧阳正风,张泉 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">前端页面</span>
+										<span class="pull-right">3.50</span>
+									</li>
+								</ul>
+							</div>
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 欧阳正风 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">前端接口</span>
+										<span class="pull-right">5.00</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td width="160" class="devping test-list">
+							<div class="test-item test-item-green">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 欧阳正风 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">联调前端接口</span>
+										<span class="pull-right">2.00</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td width="160" class="done test-list">
+							<div class="test-item test-item-yellow">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 欧阳正风 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">平台实现</span>
+										<span class="pull-right">7.25</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td class="result-column">
+							<ul>
+								<li> 
+									<label class="pull-left">测试结果:</label>
+									<div class="progress">
+									  <div class="bar bar-success" style="width: 35%;"></div>
+									  <div class="bar bar-warning" style="width: 20%;"></div>
+									  <div class="bar bar-danger" style="width: 20%;"></div>
+									</div>
+								</li>
+								<li>
+									<label class="pull-left">To Do:</label>
+									20.00
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td width="160" class="story-column">
+							<div class="story">
+								<div class="story-title">
+									<span class="pull-left number"> PS-002 </span>
+									<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+										<ul class="dropdown-menu">
+										    <li><a tabindex="-1" href="#" > 菜单一 </a></li>
+										    <li><a tabindex="-1" href="#" > 菜单二 </a></li>
+										    <li><a tabindex="-1" href="#" > 菜单三 </a></li>
+										</ul>
+									</span>
+									
+								</div>
+								<div class="story-footer">
+									<span class="user pull-left"><i class="icon-user"></i><div class="username">王程风</div></span>
+									<span class="message">
+										<ul>
+											<li> CTWAP充值 </li>
+											<li> 待开发 </li>
+										</ul>
+									</span>
+								</div>
+							</div>
+							<div class="story-plandays">0.25</div>
+						</td>
+						<td width="160" class="waiting test-list">
+							<div class="test-item test-item-green">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 王明 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">查询接品</span>
+										<span class="pull-right">2.00</span>
+									</li>
+								</ul>
+							</div>
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 欧阳正风 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">联调</span>
+										<span class="pull-right">9.00</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td width="160" class="devping test-list">
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 王明 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">缓存处理</span>
+										<span class="pull-right">4.25</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td width="160" class="done test-list">
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 王明 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">系统日志记录</span>
+										<span class="pull-right">3.25</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td class="result-column">
+							<ul>
+								<li> 
+									<label class="pull-left">测试结果:</label>
+									<div class="progress">
+									  <div class="bar bar-success" style="width: 15%;"></div>
+									  <div class="bar bar-warning" style="width: 25%;"></div>
+									  <div class="bar bar-danger" style="width: 20%;"></div>
+									</div>
+								</li>
+								<li>
+									<label class="pull-left">To Do:</label>
+									15.00
+								</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td width="160" class="story-column">
+							<div class="story">
+								<div class="story-title">
+									<span class="pull-left number"> PS-003 </span>
+									<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+										<ul class="dropdown-menu">
+										    <li><a tabindex="-1" href="#" > 菜单一 </a></li>
+										    <li><a tabindex="-1" href="#" > 菜单二 </a></li>
+										    <li><a tabindex="-1" href="#" > 菜单三 </a></li>
+										</ul>
+									</span>
+									
+								</div>
+								<div class="story-footer">
+									<span class="user pull-left"><i class="icon-user"></i><div class="username">李刚</div></span>
+									<span class="message">
+										<ul>
+											<li> 内容优化 </li>
+											<li> 已完成 </li>
+										</ul>
+									</span>
+								</div>
+							</div>
+							<div class="story-plandays">3.25</div>
+						</td>
+						<td width="160" class="waiting test-list">
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 赵文 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">前端页面</span>
+										<span class="pull-right">6.00</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td width="160" class="devping test-list">
+							
+						</td>
+						<td width="160" class="done test-list">
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 张三 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">平台页面</span>
+										<span class="pull-right">9.00</span>
+									</li>
+								</ul>
+							</div>
+							<div class="test-item">
+								<ul>
+									<li class="title">
+										<span class="pull-left"> 张三 </span>
+										<span class="pull-right dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-caret-down"></i></a>
+											<ul class="dropdown-menu">
+											    <li><a tabindex="-1" href="#" data-handler="waiting"> 待开发 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="devping"> 开发中 </a></li>
+											    <li><a tabindex="-1" href="#" data-handler="done"> 已完成 </a></li>
+											</ul>
+										</span>
+									</li>
+									<li class="message">
+										<span class="pull-left">平台后端</span>
+										<span class="pull-right">5.00</span>
+									</li>
+								</ul>
+							</div>
+						</td>
+						<td class="result-column">
+							<ul>
+								<li> 
+									<label class="pull-left">测试结果:</label>
+									<div class="progress">
+									  <div class="bar bar-success" style="width: 25%;"></div>
+									  <div class="bar bar-warning" style="width: 20%;"></div>
+									  <div class="bar bar-danger" style="width: 20%;"></div>
+									</div>
+								</li>
+								<li>
+									<label class="pull-left">To Do:</label>
+									10.00
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+		            <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+		            <div class="pagination pull-right">
+		                <ul>
+		                    <li><a href="#">首页</a></li>
+		                    <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+		                    <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+		                    <li><a href="#">下一页</a></li>
+		                    <li><a href="#">尾页</a></li>
+		                </ul>
+		            </div>
+		        </div>
+		</footer>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/product/iteration/testboard.js"></script>
+	</body>
+</html>

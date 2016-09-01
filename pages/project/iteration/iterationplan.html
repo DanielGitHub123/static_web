@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8;" />
+		<title>迭代计划</title>
+		<style type="text/css">
+			.sprint {
+				background-color: #F5F5F5;
+	    		background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+	    		background-repeat: repeat-x;
+	    		border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3;
+	    		border-radius:3px;
+				display: block;
+				margin:5px;
+				padding:5px;
+				max-height:240px;
+				min-height:100px;
+				border:1px solid rgba(82,168,236,0.8);
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6);
+			}
+			
+			.closed {text-decoration:line-through;}
+			
+			.marker-green {
+				border:1px solid #19B877;
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7aba7b;
+				-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7aba7b;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7aba7b;
+			}
+			.marker-yellow {
+				border:1px solid #FAA732;
+				-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #dbc59e;
+				-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #dbc59e;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #dbc59e;
+			}
+			.marker-red {
+				border:1px solid #DD514C;
+			    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #d59392;
+			    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #d59392;
+			    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #d59392;
+			}
+			
+			.content-body,header { min-width:940px;}
+			
+			.content-header .row-fluid .span4 {
+				margin:0;
+			    width: 33.3%;
+			    min-width:300px;
+			}
+			
+			.progress {
+				height:15px;
+				margin:2px;
+				border-radius:2px;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+			}
+			
+			.table-header,.pagingbar { background-color: #F5F5F5;}
+			.pagingbar + .toolbar { border-top:1px solid #E5E5E5;border-bottom:none;}
+			.sprint-title { list-style:none;margin:0;}
+			.sprint-title li { float:left;}
+			.sprint-title li input[type=checkbox] { margin:-3px 5px 0 0;}
+			.sprint-title li a { text-decoration: none;outline:none;}
+			
+			.story-list { height:130px;overflow: auto;display:none;width:100%;}
+			.story-list table {min-height: 20px;}
+			
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="project/projectmain.html" data-content="content" data-target="#innerContent">项目管理</a><span class="divider">/</span></li>
+				<li><a href="" data-content="content" data-target="#innerContent">迭代管理</a><span class="divider">/</span></li>
+				<li>迭代计划</li>
+			</ul>
+			<div class="toolbar">
+				<div class="btn-group pull-right">
+                    <button class="btn" data-content="content" data-target="#innerContent" href="project/iteration/addIteration.html"><i class="icon-plus"></i> 新建</button>
+                    <button class="btn dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="project/iteration/viewiteration.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+                        <li><a tabindex="-1" href="#" data-handler="close"><i class="icon-remove"></i> 关闭迭代</a></li>
+                    </ul>
+                </div>
+                <form class="form-inline clearmargin">
+                    <label>项　目:</label>
+                    <select style="width:104px;">
+                    	<option value="">  </option>
+                    	<option value="1"> 项目一 </option>
+					  	<option value="2"> 项目二 </option>
+					  	<option value="3"> 项目三 </option>
+					</select>
+                    <button class="btn" type="button" data-handler="search">查询</button>
+                </form>
+			</div>
+			<div class="row-fluid" style="background-color: #F5F5F5;">
+				<div class="span4">
+					<div class="sprint" data-id="1">
+						<table width="100%">
+							<tr>
+								<td colspan="3">
+									<ul class="sprint-title">
+										<li><input type="checkbox" /></li>
+										<li><a href="#" class="icon-caret-right"> 10月份迭代一</a></li>
+									</ul>
+								</td>
+								<td>
+									<div class="btn-group pull-right">
+										<button class="btn btn-mini" href="project/iteration/editIteration.html" data-content="content">编辑</button>
+									  	<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+									    	<span class="caret"></span>
+									  	</button>
+									  	<ul class="dropdown-menu">
+						                	<li><a href="#" data-handler="close">关闭</a></li>
+						                </ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td width="75">开始时间</td>
+								<td width="90">2013-11-08</td>
+								<td width="95">结束时间</td>
+								<td width="90">2013-11-11</td>
+							</tr>
+							<tr>
+								<td width="75">总工作量</td>
+								<td width="90">25</td>
+								<td width="95">完成工作量</td>
+								<td width="90">14</td>
+							</tr>
+							<tr>
+								<td width="75">总故事数</td>
+								<td width="90">35</td>
+								<td width="95">完成故事数</td>
+								<td width="90">20</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="progress progress-striped active">
+										<div class="bar" style="width: 40%;"></div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div class="story-list">
+							<table><tbody></tbody></table>
+						</div>
+					</div>
+				</div>
+				<div class="span4">
+					<div class="sprint" data-id="2">
+						<table width="100%">
+							<tr>
+								<td colspan="3">
+									<ul class="sprint-title">
+										<li><input type="checkbox" /></li>
+										<li><a href="#" class="icon-caret-right"> 九月份迭代一</a></li>
+									</ul>
+								</td>
+								<td>
+									<div class="btn-group pull-right">
+										<button class="btn btn-mini" href="project/iteration/editIteration.html" data-content="content">编辑</button>
+									  	<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+									    	<span class="caret"></span>
+									  	</button>
+									  	<ul class="dropdown-menu">
+						                	<li><a href="#" data-handler="close">关闭</a></li>
+						                </ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td width="75">开始时间</td>
+								<td width="90">2013-11-08</td>
+								<td width="95">结束时间</td>
+								<td width="90">2013-11-11</td>
+							</tr>
+							<tr>
+								<td width="75">总工作量</td>
+								<td width="90">25</td>
+								<td width="95">完成工作量</td>
+								<td width="90">14</td>
+							</tr>
+							<tr>
+								<td width="75">总故事数</td>
+								<td width="90">35</td>
+								<td width="95">完成故事数</td>
+								<td width="90">20</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="progress progress-striped active">
+										<div class="bar" style="width: 40%;"></div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div class="story-list">
+							<table>
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="span4">
+					<div class="sprint" data-id="3">
+						<table width="100%">
+							<tr>
+								<td colspan="3">
+									<ul class="sprint-title">
+										<li><input type="checkbox" /></li>
+										<li><a href="#" class="icon-caret-right"> 八月份迭代一</a></li>
+									</ul>
+								</td>
+								<td>
+									<div class="btn-group pull-right">
+										<button class="btn btn-mini" href="project/iteration/editIteration.html" data-content="content">编辑</button>
+									  	<button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+									    	<span class="caret"></span>
+									  	</button>
+									  	<ul class="dropdown-menu">
+						                	<li><a href="#" data-handler="close">关闭</a></li>
+						                </ul>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td width="75">开始时间</td>
+								<td width="90">2013-11-08</td>
+								<td width="95">结束时间</td>
+								<td width="90">2013-11-11</td>
+							</tr>
+							<tr>
+								<td width="75">总工作量</td>
+								<td width="90">25</td>
+								<td width="95">完成工作量</td>
+								<td width="90">14</td>
+							</tr>
+							<tr>
+								<td width="75">总故事数</td>
+								<td width="90">35</td>
+								<td width="95">完成故事数</td>
+								<td width="90">20</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="progress progress-striped active">
+										<div class="bar" style="width: 40%;"></div>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<div class="story-list">
+							<table> 
+								<tbody>
+									<tr class="closed">
+										<td>111</td>
+										<td>222</td>
+										<td>333</td>
+									</tr>
+									<tr class="closed">
+										<td>aa</td>
+										<td>bb</td>
+										<td>cc</td>
+									</tr>
+								</tbody>	
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="pagingbar">
+	            <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+	            <div class="pagination pull-right">
+	                <ul>
+	                    <li><a href="#">首页</a></li>
+	                    <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+	                    <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+	                    <li><a href="#">下一页</a></li>
+	                    <li><a href="#">尾页</a></li>
+	                </ul>
+	            </div>
+			</div>
+			
+			<div class="toolbar">
+				 <form class="form-inline clearmargin">
+                    <label>标题:</label>
+                    <input type="text" class="input-small"/>
+                    <label>Owner:</label>
+                    <input type="text" class="input-small" />
+                    <div class="btn-group">
+                    	<button class="btn" type="button" data-handler="search">查询</button>
+                    	<button class="btn" type="button" data-toggle="collapse" data-target=".extraSearchbar"><i class="icon-sort"></i></button>
+                    </div>
+                    
+                    <div class="extraSearchbar collapse">
+						<label>状态:</label>
+	                    <select style="width:104px;">
+				            <option value=""> 全部 </option>
+				            <option> 待分析 </option>
+			            	<option> 待评审 </option>
+			            	<option> 待实现 </option>
+			            	<option> 待部署 </option>
+			            	<option> 待验收 </option>
+			            	<option> 测试中 </option>
+			            	<option> 开发中 </option>
+			            	<option> 已退回 </option>
+			            	<option> 关闭 </option>
+	            		</select>
+	                    <label>优先级:</label>
+	                    <select style="width:103px;">
+	                    	<option value=""> 全部 </option>
+						  	<option value="1"> 1 </option>
+						  	<option value="2"> 2 </option>
+						  	<option value="3"> 3 </option>
+						  	<option value="4"> 4 </option>
+						  	<option value="5"> 5 </option>
+						  	<option value="6"> 6 </option>
+						  	<option value="7"> 7 </option>
+						  	<option value="8"> 8 </option>
+						  	<option value="9"> 9 </option>
+						</select>
+	                    <label>项目组:</label>
+	                    <input type="text" class="input-small" />
+					</div>
+                </form>	
+			</div>
+			
+			<div class="table-header">
+				<table class="table table-condensed">
+					<tbody>
+						<tr>
+							<th width="80">编号</th>
+							<th width="130">标题</th>
+							<th width="100">Owner</th>
+							<th width="80">类型</th>
+							<th width="100">项目组</th>
+							<th width="60">优先级</th>
+							<th width="80">状态</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</header>
+		<div class="content-body">
+				<table class="table table-hover table-condensed story-table">
+	                <tbody>
+	                	<tr>
+			            	<td width="80">S-001</td>
+		                    <td width="130">连载更新1</td>
+		                    <td width="100"> 张三1 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组1</td>
+		                    <td width="60">1</td>
+		                    <td width="80">待评审</td>
+			            </tr>
+		                <tr>
+		                    <td width="80">S-002</td>
+		                    <td width="130">连载更新2</td>
+		                    <td width="100"> 张三2 </td>
+		                    <td width="80">技术改造</td>
+		                    <td width="100">项目组2</td>
+		                    <td width="60">5</td>
+		                    <td width="80">已下发</td>
+		                </tr>
+		                <tr>
+		                    <td width="80">S-003</td>
+		                    <td width="130">连载更新3</td>
+		                    <td width="100"> 张三3 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组3</td>
+		                    <td width="60">2</td>
+		                    <td width="80">被退回</td>
+		                </tr>
+		                <tr>
+		                    <td width="80">S-004</td>
+		                    <td width="130">连载更新4</td>
+		                    <td width="100"> 张三4 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组4</td>
+		                    <td width="60">3</td>
+		                    <td width="80">待评审</td>
+		                </tr>
+		                <tr>
+		                    <td width="80">S-005</td>
+		                    <td width="130">连载更新5</td>
+		                    <td width="100"> 张三5 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组5</td>
+		                    <td width="60">8</td>
+		                    <td width="80">已完成</td>
+		                </tr>
+		                <tr>
+		                    <td width="80">S-006</td>
+		                    <td width="130">连载更新6</td>
+		                    <td width="100"> 张三6 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组6</td>
+		                    <td width="60">6</td>
+		                    <td width="80">开发中</td>
+		                </tr>
+		                <tr>
+		                    <td width="80">S-007</td>
+		                    <td width="130">连载更新7</td>
+		                    <td width="100"> 张三7 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组7</td>
+		                    <td width="60">4</td>
+		                    <td width="80">测试中</td>
+		                </tr>
+		                <tr>
+		                    <td width="80">S-008</td>
+		                    <td width="130">连载更新8</td>
+		                    <td width="100"> 张三8 </td>
+		                    <td width="80">需求</td>
+		                    <td width="100">项目组8</td>
+		                    <td width="60">4</td>
+		                    <td width="80">测试中</td>
+		                </tr>
+                    </tbody>
+                </table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+	            <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+	            <div class="pagination pull-right">
+	                <ul>
+	                    <li><a href="#">首页</a></li>
+	                    <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+	                    <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+	                    <li><a href="#">下一页</a></li>
+	                    <li><a href="#">尾页</a></li>
+	                </ul>
+	            </div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/product/iteration/iterationplan.js"></script>
+	</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>产品接口人-拆分需求</title>
+		<style type="text/css">
+			.form-horizontal { margin:20px 0 0 20px;}
+			.form-horizontal .control-group {margin-bottom: 12px;}
+			.form-horizontal .span10 .controls table {margin:0;}
+			.form-actions {padding:20px 180px;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产口接口人</a><span class="divider">/</span></li>
+				<li><a href="mywork/productor/waittododemand.html" data-content="content">待处理的需求</a><span class="divider">/</span></li>
+				<li>拆分需求</li>
+			</ul>
+			<div class="toolbar">
+				<div class="pull-right">
+					<button class="btn" type="button" data-toggle="collapse" data-target="#addsplitdemand"><i class="icon-plus"></i> 添加</button>
+				</div>
+			</div>
+			<div class="table-header">
+				<table class="table table-condensed">
+					<thead>
+	                    <tr>
+	                        <th width="30"> 编号 </th>
+	                        <th> 标题 </th>
+	                        <th width="110"> 申请人 </th>
+	                        <th width="110"> 部门 </th>
+	                        <th width="60"> 优先级 </th>
+	                        <th width="80"> 状态 </th>
+	                        <th width="110"> 产品经理 </th>
+	                    </tr>
+	             	</thead>
+				</table>
+			</div>
+		</header>
+		
+		<div class="content-body">
+			<table class="table table-hover table-condensed tree">
+                <tbody>
+                	<tr class="treegrid-1">
+		            	<td width="30">1</td>
+	                    <td >连载更新</td>
+	                    <td width="110">张三</td>
+	                    <td width="110">内容部</td>
+	                    <td width="60">1</td>
+	                    <td width="80">待确认</td>
+	                    <td width="110">Jack</td>
+		            </tr>
+		                <tr class="treegrid-2 treegrid-parent-1">
+		                    <td>2</td>
+		                    <td>在线修改</td>
+		                    <td>李四</td>
+		                    <td>运营部</td>
+		                    <td>2</td>
+		                    <td>待确认</td>
+		                    <td>Rose</td>
+		                </tr>
+		                <tr class="treegrid-3 treegrid-parent-1">
+		                    <td>3</td>
+		                    <td>运营日志</td>
+		                    <td>王五</td>
+		                    <td>运营部</td>
+		                    <td>3</td>
+		                    <td>待确认</td>
+		                    <td>Lily</td>
+		                </tr>
+		                <tr class="treegrid-4 treegrid-parent-1">
+		                    <td>4</td>
+		                    <td>WAP分频</td>
+		                    <td>刘六</td>
+		                    <td>内容部</td>
+		                    <td>2</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                </tr>
+                    </tbody>
+                </table>
+			
+				<div class="row-fluid collapse" id="addsplitdemand" style="padding-top: 20px;">
+					<form class="form-horizontal">
+		    			<div class="row-fluid">
+		    				<div class="span5">
+						        <div class="control-group">
+							    	<label class="control-label" for="topic"><span style="color:red;">* </span>主题</label>
+								    <div class="controls">
+								    	<input type="text" name="topic" maxlength="25" class="input-xlarge span12">
+								    </div>
+							  	</div>
+					    		<div class="control-group">
+					          		<label class="control-label" for="input01"><span style="color:red;">* </span>所属部门</label>
+					          		<div class="controls">
+					            		<input type="text" class="input-xlarge disabled span12">
+					          		</div>
+					        	</div>
+						        <div class="control-group">
+					          		<label class="control-label" for="input01">申请人</label>
+					          		<div class="controls">
+					            		<input type="text" class="input-xlarge disabled span12">
+					          		</div>
+					        	</div>
+						        <div class="control-group">
+					          		<label class="control-label"><span style="color:red;">* </span>商业价值</label>
+					          		<div class="controls">
+					            		<select class="input-xlarge span12" id="businessValue">
+							            	<option>非常重要</option>
+							              	<option>重要</option>
+							              	<option>普通</option>
+					            		</select>
+					          		</div>
+					        	</div>
+						        <div class="control-group">
+					          		<label class="control-label">需求状态</label>
+					          		<div class="controls">
+					            		<select class="input-xlarge span12" id="demandState">
+							            	<option> 待分析 </option>
+							            	<option> 待评审 </option>
+							            	<option> 待实现 </option>
+							            	<option> 待部署 </option>
+							            	<option> 待验收 </option>
+							            	<option> 待验收 </option>
+							            	<option> 待确认 </option>
+							            	<option> 已完成 </option>
+							            	<option> 关闭 </option>
+					            		</select>
+					          		</div>
+					        	</div>
+						        <div class="control-group">
+					        		<label class="control-label">优先级</label>
+					        		<div class="controls">
+					        			<input type="text" class="input-xlarge span12" />
+					        		</div>
+					        	</div>
+					        	<div class="control-group">
+					          		<label class="control-label"><span style="color:red;">* </span>描述</label>
+					          		<div class="controls">
+							            <div class="textarea">
+							            	<textarea class="span12" name="remark" maxlength="500"></textarea>
+							            </div>
+					          		</div>
+					        	</div>
+							</div>
+				      		<div class="span5">
+						      	<div class="control-group">
+					          		<label class="control-label"><span style="color:red;">* </span>时间紧急性</label>
+					          		<div class="controls">
+						            	<label class="radio inline">
+						              		<input type="radio" value="3" name="group" checked="checked">普通
+						            	</label>
+						            	<label class="radio inline">
+						              		<input type="radio" value="2" name="group">紧急
+						            	</label>
+							            <label class="radio inline">
+							            	<input type="radio" value="1" name="group">非常紧急
+							            </label>
+					          		</div>
+					        	</div>
+						      	<div class="control-group">
+					          		<label class="control-label"><span style="color:red;">* </span>涉及</label>
+					          		<div class="controls">
+						                 <select multiple class="multiSelect muti-select-channel span12">
+											<option>平台</option>
+											<option>WAP</option>
+											<option>IOS</option>
+											<option>Android</option>
+										</select>
+					          		</div>
+					        	</div>
+						        <div class="control-group">
+					          		<label class="control-label" for="input01">申请时间</label>
+					          		<div class="controls">
+					          			<div class="input-append span12" id="datetimepicker2" style="position: relative; left: -27px; padding-left: 27px;">
+										    <input type="text" class="input-xlarge disabled span12" data-format="yyyy-MM-dd HH:mm:ss">
+										    <span class="add-on">
+										      <i data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></i>
+										    </span>
+								  		</div>
+					          		</div>
+					        	</div>
+						        <div class="control-group">
+					        		<label class="control-label">关联文件夹</label>
+					        		<div class="controls">
+					          			<div class="input-append span12" style="position: relative; left: -27px; padding-left: 27px;">
+										    <input type="text" class="input-xlarge disabled span12">
+										    <span class="add-on">
+										      <i class="icon-link"></i>
+										    </span>
+								  		</div>
+					          		</div>
+					        	</div>
+					        	<div class="control-group">
+					    			<label class="control-label">附件</label>
+					    			<div data-provides="fileupload" class="controls fileupload fileupload-new">
+					    					<input type="hidden" />
+									  		<div class="input-append span12" style="position: relative; padding-left: 42px; left: -47px;">
+									    		<div class="uneditable-input" style="width: 100%;">
+									    			<i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span>
+									    		</div>
+									    		<span style="padding:4px 6px;" class="btn btn-file">
+									    			<span class="fileupload-new"><i class="icon-folder-open"> </i></span>
+									    			<span class="fileupload-exists"><i class="icon-folder-open"> </i></span>
+									    			<input type="file">
+									    		</span>
+									    		<span data-dismiss="fileupload" class="btn fileupload-exists" style="padding:4px 8px;"><i class="icon-trash"> </i></span>
+									  		</div>
+					    			</div>
+					        	</div>
+					        	<div class="control-group">
+					          		<label class="control-label">备注</label>
+					          		<div class="controls">
+							            <div class="textarea">
+							            	<textarea class="span12" name="remark" maxlength="500"></textarea>
+							            </div>
+					          		</div>
+					        	</div>
+				     		</div>
+		    			</div>
+		    			<div class="form-actions">
+		    				<button class="btn btn-success" type="submit">保存</button>
+		    				<button class="btn" type="reset" style="margin-left:10px;">重置</button>
+		    			</div>
+		    		</form>
+				</div>	
+		</div>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/mywork/productor/splitdemand.js"></script>
+	</body>
+</html>

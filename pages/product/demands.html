@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>需求管理</title>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+<body>
+<div class="row-fluid row-bread-height">
+    <ul class="breadcrumb navbar-inner well-none">
+        <li><a href="mywork/myworkmain.html" data-content="content" data-target="#innerContent">我的工作</a><span class="divider">/</span></li>
+        <li><a href="" data-content="content" data-target="#innerContent">业务需求方</a><span class="divider">/</span></li>
+        <li>退回的需求</li>
+    </ul>
+</div>
+<div class="row-fluid dataList" id="J-dataList">
+<header class="page-toolbar">
+    <div class="btn-group pull-right">
+        <button class="btn" data-content="content" data-target="#innerContent" href="mywork/business/viewdemand.html"><i class="icon-eye-open"></i> 查看</button>
+        <button class="btn dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a tabindex="-1" href="mywork/business/editdemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+            <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+            <li><a tabindex="-1" href="#" onclick="test()"><i class="icon-remove"></i> 删除</a></li>
+            <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+        </ul>
+    </div>
+    <form class="form-inline clearmargin">
+        <label>标题:</label>
+        <input type="text" class="input-small"/>
+        <label>申请人:</label>
+        <input type="text" class="input-small" />
+        <div class="btn-group">
+            <button class="btn" type="button">查询</button>
+            <button class="btn" type="button" data-toggle="collapse" data-target="header .collapse"><i class="icon-sort"></i></button>
+        </div>
+
+        <div class="collapse">
+            <label>部门:</label>
+            <input type="text" class="input-small"/>
+            <label>优先级:</label>
+            <select class="multiselect">
+                <option value="cheese">需求</option>
+                <option value="tomatoes">技术改造</option>
+                <option value="mozarella">BUG</option>
+            </select>
+            <label>状态:</label>
+            <input type="text" class="input-small" />
+            <label>产品经理:</label>
+            <input type="text" class="input-small" />
+        </div>
+
+
+    </form>
+
+</header>
+
+<table class="table table-hover table-striped table-condensed tree">
+    <thead>
+    <tr>
+        <th width="30"> 编号 </th>
+        <th width="150"> 标题 </th>
+        <th width="60"> 申请人 </th>
+        <th> 部门 </th>
+        <th> 优先级 </th>
+        <th> 状态 </th>
+        <th width="60"> 产品经理 </th>
+        <th class="cell-handler"> 操作 </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="treegrid-1">
+        <td>1</td>
+        <td>连载更新</td>
+        <td>张三</td>
+        <td>内容部</td>
+        <td>1</td>
+        <td>待确认</td>
+        <td>Jack</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-2 treegrid-parent-1">
+        <td>2</td>
+        <td>在线修改</td>
+        <td>李四</td>
+        <td>运营部</td>
+        <td>2</td>
+        <td>待确认</td>
+        <td>Rose</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-3 treegrid-parent-1">
+        <td>3</td>
+        <td>运营日志</td>
+        <td>王五</td>
+        <td>运营部</td>
+        <td>3</td>
+        <td>待确认</td>
+        <td>Lily</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-4 treegrid-parent-3">
+        <td>4</td>
+        <td>WAP分频</td>
+        <td>刘六</td>
+        <td>内容部</td>
+        <td>2</td>
+        <td>待确认</td>
+        <td>Additional</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-5">
+        <td>5</td>
+        <td>上传优化</td>
+        <td>陈七</td>
+        <td>运营部</td>
+        <td>5</td>
+        <td>待确认</td>
+        <td>Additional</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-6 treegrid-parent-5">
+        <td>6</td>
+        <td>先上后审</td>
+        <td>小五</td>
+        <td>市场部</td>
+        <td>8</td>
+        <td>待确认</td>
+        <td>Additional</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-7 treegrid-parent-5">
+        <td>7</td>
+        <td>先审后上</td>
+        <td>小六</td>
+        <td>内容部</td>
+        <td>2</td>
+        <td>待确认</td>
+        <td>Additional</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    <tr class="treegrid-8 treegrid-parent-7">
+        <td>8</td>
+        <td>预览审核</td>
+        <td>小七</td>
+        <td>内容部</td>
+        <td>1</td>
+        <td>待确认</td>
+        <td>Additional</td>
+        <td class="cell-handler"><div class="btn-group">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"><i class="icon-eye-open"></i> 查看</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-pencil"></i> 修改</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-ok"></i> 提交</a></li>
+                <li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+                <li><a tabindex="-1" href="mywork/business/operationhistory.html" data-content="content"><i class="icon-time"></i> 活动历史</a></li>
+            </ul>
+        </div></td>
+    </tr>
+    </tbody>
+</table>
+<footer>
+    <div class="pagingbar">
+        <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+        <div class="pagination pull-right">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+                <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+                <li><a href="#">下一页</a></li>
+                <li><a href="#">尾页</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+<div class="pagingbar">
+    <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+    <div class="pagination pull-right">
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+            <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+            <li><a href="#">下一页</a></li>
+            <li><a href="#">尾页</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+    function test(){
+        bootbox.confirm("您确定要删除选定的记录", function(result) {
+            $.globalMessenger().post({
+                message: '你选择了：'+result,
+                hideAfter: 55,
+                hideOnNavigate : true,
+                showCloseButton: true
+            });
+        });
+    }
+
+    $('.multiselect').multiselect({
+        buttonClass: 'btn',
+        // buttonWidth: '374',
+        // buttonContainer: '<div class="btn-group" ></div>',
+        maxHeight: false,
+    });
+
+    $('.tree').treegrid({
+        treeColumn: 1,
+        initialState : 'collapsed',
+        expanderExpandedClass: 'icon-caret-down',
+        expanderCollapsedClass: 'icon-caret-right'
+    });
+
+</script>
+</body>
+</html>

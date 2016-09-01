@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>退回的故事-下发</title>
+		<style type="text/css">
+			form .select2-choices {
+				-moz-border-radius-topright: 0 !important;
+				-moz-border-radius-bottomright: 0 !important;
+				-webkit-border-bottom-right-radius: 0 !important;
+				-webkit-border-top-right-radius: 0 !important; 
+				border-bottom-right-radius: 0 !important;
+				border-top-right-radius: 0 !important;
+			}
+			
+			#saveBtn {
+				-moz-border-radius-topleft: 0 !important;
+				-moz-border-radius-bottomleft: 0 !important;
+				-webkit-border-bottom-left-radius: 0 !important;
+				-webkit-border-top-left-radius: 0 !important; 
+				border-bottom-left-radius: 0 !important;
+				border-top-left-radius: 0 !important;
+			}
+		</style>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产品接口人</a><span class="divider">/</span></li>
+				<li><a href="mywork/productor/returnstory.html" data-content="content">退回故事</a><span class="divider">/</span></li>
+				<li>重新下发</li>
+			</ul>
+		</header>
+		<div class="content-body">
+			<form class="span6">
+				<label style="position: absolute;left:50%;top:40%;margin-left:-44px;margin-top:-70px;">下发渠道选择</label>
+				<select multiple class="multiSelect muti-select-channel" style="width:360px;position: absolute;left:50%;top:40%;margin-left:-180px;margin-top:-40px;">
+					<option>平台</option>
+					<option>下发</option>
+					<option>WAP</option>
+					<option>项目1</option>
+					<option>项目2</option>
+					<option>项目3</option>
+				</select>
+				<button type="button" class="btn" id="saveBtn" style="position: absolute;left:50%;top:40%;margin-left:180px;height:34px;margin-top:-40px;">保存</button>
+				<input type="hidden" name="workers" id="workers"/>
+			</form>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+		
+				$(".multiSelect").select2();
+				$("#btnSave").click(function(){
+					var v =$("#worker").select2("val");
+					$("#workers").val(v);
+				});
+			});
+		</script>
+	</body>
+</html>

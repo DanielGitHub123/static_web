@@ -1,0 +1,66 @@
+body {
+	background: #2E363F;
+	color: #333;
+	overflow-x: hidden;
+	font-size: 12px;
+}
+
+body div.container {
+	margin-top: 120px;
+}
+
+#login-form input[type="text"],#login-form input[type="password"] {
+	font-size: 18px;
+	height: 32px;
+	font-weight: bold;
+}
+
+#login-form span.add-on {
+	height: 32px;
+	width:32px;
+	line-height: 32px;
+}
+
+#login-form div.input-prepend {
+	height: 48px;
+}
+
+.remember-float {
+	float: left;
+}
+
+.remember-msg {
+	line-height: 20px;
+	vertical-align: middle;
+	padding-left: 10px;
+	color: #a3a3a3;
+	cursor: pointer;
+}
+
+.logo-container img {
+	height: 128px;
+    margin: 0 20% 5%;
+    width: 128px;
+}
+
+.loginbtn-right {
+	margin-left:109px;
+}
+
+
+
+label.valid {
+	width: 24px;
+	height: 24px;
+	/*background: url(../images/valid.png) center center no-repeat;*/
+	display: inline-block;
+	text-indent: -9999px;
+}
+label.error {
+	font-weight: bold;
+	color: red;
+	padding: 2px 8px;
+	display: inline-block;
+	line-height: 28px;
+	margin-top: 5px;
+}

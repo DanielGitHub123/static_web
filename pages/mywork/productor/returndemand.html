@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>产品接口人-退回的需求</title>
+	</head>
+	<body>
+		<header class="content-header">
+			<ul class="breadcrumb navbar-inner well-none">
+				<li><a href="mywork/myworkmain.html" data-content="content">我的工作</a><span class="divider">/</span></li>
+				<li><a href="#">产品接口人</a><span class="divider">/</span></li>
+				<li>退回的需求</li>
+			</ul>
+			<div class="toolbar">
+				<div class="btn-group pull-right">
+					<button class="btn" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</button>
+					<button class="btn dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+						<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+						<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+					</ul>
+				</div>
+                <form class="form-inline clearmargin">
+                    <label>标题:</label>
+                    <input type="text" class="input-small"/>
+                    <label>申请人:</label>
+                    <input type="text" class="input-small" />
+                    <div class="btn-group">
+                    	<button class="btn" type="button" data-handler="search">查询</button>
+                    	<button class="btn" type="button" data-toggle="collapse" data-target=".extraSearchbar"><i class="icon-sort"></i></button>
+                    </div>
+                    
+                    <div class="extraSearchbar collapse">
+						<label>部门:</label>
+	                    <input type="text" class="input-small"/>
+	                    <label>优先级:</label>
+	                    <select style="width:103px;">
+	                    	<option value=""> 全部 </option>
+						  	<option value="cheese">需求</option>
+						  	<option value="tomatoes">技术改造</option>
+						  	<option value="mozarella">BUG</option>
+						</select>
+	                    <label>状态:</label>
+	                    <select style="width:103px;">
+				            <option value=""> 全部 </option>
+				            <option> 待分析 </option>
+			            	<option> 待评审 </option>
+			            	<option> 待实现 </option>
+			            	<option> 待部署 </option>
+			            	<option> 待验收 </option>
+			            	<option> 待验收 </option>
+			            	<option> 待确认 </option>
+			            	<option> 已完成 </option>
+			            	<option> 关闭 </option>
+	            		</select>
+	                    <label>产品经理:</label>
+	                    <input type="text" class="input-small" />
+					</div>
+                </form>
+			</div>
+			<div class="table-header">
+				<table class="table table-condensed">
+					<thead>
+	                    <tr>
+	                        <th width="30"> 编号 </th>
+	                        <th> 标题 </th>
+	                        <th width="110"> 申请人 </th>
+	                        <th width="110"> 部门 </th>
+	                        <th width="60"> 优先级 </th>
+	                        <th width="80"> 状态 </th>
+	                        <th width="110"> 产品经理 </th>
+	                        <th width="60" style="text-align:center;"> 操作 </th>
+	                    </tr>
+	             	</thead>
+				</table>
+			</div>
+		</header>
+		<div class="content-body">
+			<table class="table table-hover table-condensed tree">
+                <tbody>
+                	<tr class="treegrid-1">
+		            	<td width="30">1</td>
+	                    <td >连载更新</td>
+	                    <td width="110">张三</td>
+	                    <td width="110">内容部</td>
+	                    <td width="60">1</td>
+	                    <td width="80">待确认</td>
+	                    <td width="110">Jack</td>
+	                    <td width="60">
+	                    	<div class="btn-group pull-right">
+                                <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                <ul class="dropdown-menu">
+                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+									<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+									<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+                                </ul>
+                            </div>
+                        </td>
+		            </tr>
+		                <tr class="treegrid-2 treegrid-parent-1">
+		                    <td>2</td>
+		                    <td>在线修改</td>
+		                    <td>李四</td>
+		                    <td>运营部</td>
+		                    <td>2</td>
+		                    <td>待确认</td>
+		                    <td>Rose</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-3 treegrid-parent-1">
+		                    <td>3</td>
+		                    <td>运营日志</td>
+		                    <td>王五</td>
+		                    <td>运营部</td>
+		                    <td>3</td>
+		                    <td>待确认</td>
+		                    <td>Lily</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-4 treegrid-parent-3">
+		                    <td>4</td>
+		                    <td>WAP分频</td>
+		                    <td>刘六</td>
+		                    <td>内容部</td>
+		                    <td>2</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-5">
+		                    <td>5</td>
+		                    <td>上传优化</td>
+		                    <td>陈七</td>
+		                    <td>运营部</td>
+		                    <td>5</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-6 treegrid-parent-5">
+		                    <td>6</td>
+		                    <td>先上后审</td>
+		                    <td>小五</td>
+		                    <td>市场部</td>
+		                    <td>8</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-7 treegrid-parent-5">
+		                    <td>7</td>
+		                    <td>先审后上</td>
+		                    <td>小六</td>
+		                    <td>内容部</td>
+		                    <td>2</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-8 treegrid-parent-7">
+		                    <td>8</td>
+		                    <td>预览审核</td>
+		                    <td>小七</td>
+		                    <td>内容部</td>
+		                    <td>1</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-9">
+		                    <td>9</td>
+		                    <td>预览审核</td>
+		                    <td>小七</td>
+		                    <td>内容部</td>
+		                    <td>1</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-10 treegrid-parent-9">
+		                    <td>10</td>
+		                    <td>预览审核</td>
+		                    <td>小七</td>
+		                    <td>内容部</td>
+		                    <td>1</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+		                <tr class="treegrid-11 treegrid-parent-9">
+		                    <td>11</td>
+		                    <td>预览审核</td>
+		                    <td>小七</td>
+		                    <td>内容部</td>
+		                    <td>1</td>
+		                    <td>待确认</td>
+		                    <td>Additional</td>
+		                    <td><div class="btn-group pull-right">
+                                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> 操作 <span class="caret"></span> </a>
+                                    <ul class="dropdown-menu">
+	                                	<li><a tabindex="-1" href="mywork/productor/redistribution.html" data-content="content"><i class="icon-share-alt"></i> 分配</a></li>
+	                                	<li><a tabindex="-1" href="mywork/productor/editreturndemand.html" data-content="content"><i class="icon-pencil"></i> 修改</a></li>
+										<li><a tabindex="-1" href="#"><i class="icon-remove"></i> 删除</a></li>
+										<li><a tabindex="-1" href="mywork/productor/viewreturndemand.html" data-content="content"><i class="icon-eye-open"></i> 查看</a></li>
+	                                </ul>
+                                </div></td>
+		                </tr>
+                    </tbody>
+                </table>
+		</div>
+		<footer class="content-footer">
+			<div class="pagingbar">
+		            <div class="paging-text pull-left">当前显示第1-30条记录，共1000条记录，120页</div>
+		            <div class="pagination pull-right">
+		                <ul>
+		                    <li><a href="#">首页</a></li>
+		                    <li class="pagingbar-page-prev"><a href="#">上一页</a></li>
+		                    <li class="pagingbar-page"><a href="#"><input type="text"></a></li>
+		                    <li><a href="#">下一页</a></li>
+		                    <li><a href="#">尾页</a></li>
+		                </ul>
+		            </div>
+		        </div>
+		</footer>
+		<script type="text/javascript" src="../../../../tongren_html/js/pages/mywork/productor/returndemand-list.js"></script>
+	</body>
+</html>
